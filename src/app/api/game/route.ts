@@ -125,15 +125,13 @@ export async function POST(req: Request, res: Response) {
     }
 }
 
-export async function GET(req: Request, res: Response) {
+export async function GET(req: Request) {
     try {
         const session = await getAuthSession();
         if (!session?.user) {
             return NextResponse.json(
                 {error: "You must be logged in to create a game."},
-                {
-                    status: 401,
-                }
+                {status: 401}
             );
         }
         const url = new URL(req.url);
@@ -141,9 +139,7 @@ export async function GET(req: Request, res: Response) {
         if (!gameId) {
             return NextResponse.json(
                 {error: "You must provide a game id."},
-                {
-                    status: 400,
-                }
+                {status: 400}
             );
         }
 
@@ -158,24 +154,15 @@ export async function GET(req: Request, res: Response) {
         if (!game) {
             return NextResponse.json(
                 {error: "Quiz not found."},
-                {
-                    status: 404,
-                }
+                {status: 404}
             );
         }
 
-        return NextResponse.json(
-            {game},
-            {
-                status: 400,
-            }
-        );
+        return NextResponse.json({game}, {status: 200});
     } catch (error) {
         return NextResponse.json(
             {error: "An unexpected error occurred."},
-            {
-                status: 500,
-            }
+            {status: 500}
         );
     }
 }
