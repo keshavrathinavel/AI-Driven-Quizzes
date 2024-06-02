@@ -110,8 +110,7 @@ const QuizCreation = ({topic: topicParam}: Props) => {
                                             <Input placeholder="Enter a topic" {...field} />
                                         </FormControl>
                                         <FormDescription>
-                                            Please provide any topic you would like to be quizzed on
-                                            here.
+                                            Provide a topic you want to be quizzed on.
                                         </FormDescription>
                                         <FormMessage/>
                                     </FormItem>
@@ -136,8 +135,7 @@ const QuizCreation = ({topic: topicParam}: Props) => {
                                             />
                                         </FormControl>
                                         <FormDescription>
-                                            You can choose how many questions you would like to be
-                                            quizzed on here.
+                                            Choose how many questions you want in the quiz.
                                         </FormDescription>
                                         <FormMessage/>
                                     </FormItem>
