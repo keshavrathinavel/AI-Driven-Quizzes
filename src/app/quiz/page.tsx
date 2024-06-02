@@ -1,7 +1,6 @@
 import React from "react";
-
-import { getAuthSession } from "@/lib/nextauth";
-import { redirect } from "next/navigation";
+import {getAuthSession} from "@/lib/nextauth";
+import {redirect} from "next/navigation";
 import QuizCreation from "@/components/forms/QuizCreation";
 
 export const metadata = {
@@ -17,10 +16,10 @@ interface Props {
 
 const Quiz = async ({searchParams}: Props) => {
     const session = await getAuthSession();
-    if (!session?.user) {
+    if (!session?.user || session.user.role !== "TEACHER") {
         redirect("/");
     }
-    if (session?.user.role !== "STUDENT")
+
     return <QuizCreation topic={searchParams.topic ?? ""}/>;
 };
 
