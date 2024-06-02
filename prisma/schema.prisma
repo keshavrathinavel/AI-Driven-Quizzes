@@ -95,3 +95,11 @@ model Question {
 
   @@index([gameId])
 }
+
+model Quizzes {
+  id        String @id @default(cuid())
+  title     String
+  topic     String
+  questions Json
+  createdBy String
+}
