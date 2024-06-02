@@ -10,7 +10,7 @@ export async function POST(req: Request, res: Response) {
     const session = await getAuthSession();
     if (!session?.user) {
       return NextResponse.json(
-        { error: "You must be logged in to create a game." },
+        { error: "You must be logged in to create a quiz." },
         {
           status: 401,
         }
@@ -60,7 +60,6 @@ export async function POST(req: Request, res: Response) {
       };
 
       const manyData = data.questions.map((question: mcqQuestion) => {
-        // mix up the options lol
         const options = [
           question.option1,
           question.option2,
