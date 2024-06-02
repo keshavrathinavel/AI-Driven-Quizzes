@@ -10,11 +10,11 @@ import React from "react";
 type Props = {};
 
 export const metadata = {
-  title: "Dashboard | Quizzzy",
-  description: "Quiz yourself on anything!",
+  title: "Dashboard | Saplings.AI",
+  description: "Take a quiz on anything!",
 };
 
-const Dasboard = async (props: Props) => {
+const Dashboard = async (props: Props) => {
   const session = await getAuthSession();
   if (!session?.user) {
     redirect("/");
@@ -39,4 +39,4 @@ const Dasboard = async (props: Props) => {
   );
 };
 
-export default Dasboard;
+export default Dashboard;
