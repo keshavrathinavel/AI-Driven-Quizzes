@@ -84,7 +84,7 @@ const MCQ = ({ game }: Props) => {
           }));
           toast({
             title: "Correct",
-            description: "You got it right!",
+            description: "You got it right 🤩",
             variant: "success",
           });
         } else {
@@ -94,7 +94,7 @@ const MCQ = ({ game }: Props) => {
           }));
           toast({
             title: "Incorrect",
-            description: "You got it wrong!",
+            description: "You got it wrong ❌",
             variant: "destructive",
           });
         }
