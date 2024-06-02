@@ -16,6 +16,17 @@ export async function POST(req: Request, res: Response) {
                 }
             );
         }
+
+        if (session.user.role !== "TEACHER") {
+            return NextResponse.json(
+                {error: "You must be logged in to create a quiz."},
+                {
+                    status: 403,
+                }
+            );
+        }
+
+
         const body = await req.json();
         const {topic, type, amount} = quizCreationSchema.parse(body);
         const game = await prisma.game.create({
