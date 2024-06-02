@@ -25,7 +25,7 @@ const DetailsDialog = (props: Props) => {
             </DialogTrigger>
             <DialogContent className="w-[70vw] max-w-[100vw] md:w-[50vw]">
                 <DialogHeader>
-                    <DialogTitle className="text-xl">Welcome to Quizzzy!</DialogTitle>
+                    <DialogTitle className="text-xl">Welcome to SaplingsAI!</DialogTitle>
                     <DialogDescription>
                         <p className="text-2xl my-2 mt-4 ">
                             Unlock Infinite Knowledge with AI-Driven Quizzes 🤯 Use the <b>Create Quiz</b> tab to create a
