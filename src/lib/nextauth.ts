@@ -7,13 +7,13 @@ import {
 } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { prisma } from "@/lib/db";
+import {UserRole} from "@prisma/client";
 
 declare module "next-auth" {
   interface Session extends DefaultSession {
     user: {
       id: string;
-      // ...other properties
-      // role: UserRole;
+      role: UserRole;
     } & DefaultSession["user"];
   }
 
@@ -26,6 +26,7 @@ declare module "next-auth" {
 declare module "next-auth/jwt" {
   interface JWT {
     id: string;
+    role: string;
   }
 }
 
@@ -43,12 +44,15 @@ export const authOptions: NextAuthOptions = {
       });
       if (db_user) {
         token.id = db_user.id;
+        // @ts-ignore
+        token.role = db_user.role;
       }
       return token;
     },
     session: ({ session, token }) => {
       if (token) {
         session.user.id = token.id;
+        session.user.role = token.role;
         session.user.name = token.name;
         session.user.email = token.email;
         session.user.image = token.picture;
