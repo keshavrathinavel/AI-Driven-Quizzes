@@ -19,7 +19,7 @@ const DetailsDialog = (props: Props) => {
         <Dialog>
             <DialogTrigger>
         <span className="flex items-center px-2 py-1 text-white rounded-md bg-slate-800">
-          Help
+          Learn More
           <HelpCircle className="w-5 h-5 ml-1"/>
         </span>
             </DialogTrigger>
@@ -38,12 +38,12 @@ const DetailsDialog = (props: Props) => {
                             <div className="grid justify-around grid-cols-4 mt-2 gap-y-3">
                                 <div className="flex items-center gap-2">
                                     <Image
-                                        alt="planetscale"
-                                        src="/planetscale.png"
+                                        alt="postgres"
+                                        src="/postgres.png"
                                         width={35}
                                         height={35}
                                     />
-                                    <span className="">Planet Scale</span>
+                                    <span className="">PostgreSQL</span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Image
