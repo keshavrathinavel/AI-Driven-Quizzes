@@ -153,7 +153,7 @@ const QuizCreation = ({topic: topicParam}: Props) => {
                                     }}
                                     type="button"
                                 >
-                                    <CopyCheck className="w-4 h-4 mr-2"/> Multiple Choice
+                                    <CopyCheck className="w-4 h-4 mr-2"/> MCQ
                                 </Button>
                                 <Separator orientation="vertical"/>
                                 <Button
@@ -162,7 +162,7 @@ const QuizCreation = ({topic: topicParam}: Props) => {
                                             ? "default"
                                             : "secondary"
                                     }
-                                    className="w-1/2 rounded-none rounded-r-lg"
+                                    className="w-1/2 rounded-none py-1 rounded-r-lg"
                                     onClick={() => form.setValue("type", "open_ended")}
                                     type="button"
                                 >
