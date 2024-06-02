@@ -12,7 +12,7 @@ const ViewAvailableQuizzes = () => {
         <Card
             className="hover:cursor-pointer w-full hover:opacity-75"
             onClick={() => {
-                router.push("/list");
+                router.push("/quiz/list/all");
             }}
         >
             <CardHeader className="flex flex-row items-center justify-between">

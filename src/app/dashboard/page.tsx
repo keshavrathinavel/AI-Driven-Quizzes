@@ -6,7 +6,7 @@ import RecentActivityCard from "@/components/dashboard/RecentActivityCard";
 import {getAuthSession} from "@/lib/nextauth";
 import {redirect} from "next/navigation";
 import React from "react";
-import ViewAvailableQuizzes from "@/app/quizlist/page";
+import ViewAvailableQuizzes from "@/app/quiz/list/page";
 
 type Props = {};
 
