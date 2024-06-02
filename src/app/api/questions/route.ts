@@ -12,7 +12,7 @@ export async function POST(req: Request, res: Response) {
     const session = await getAuthSession();
     // if (!session?.user) {
     //   return NextResponse.json(
-    //     { error: "You must be logged in to create a game." },
+    //     { error: "You must be logged in to take a quiz." },
     //     {
     //       status: 401,
     //     }
