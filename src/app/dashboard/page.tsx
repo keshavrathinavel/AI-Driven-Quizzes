@@ -21,6 +21,8 @@ const Dashboard = async (props: Props) => {
         redirect("/");
     }
 
+    const userRole = session?.user?.role;
+
     return (
         <main className="p-8 mx-auto max-w-7xl">
             <div className="flex items-center">
@@ -33,10 +35,11 @@ const Dashboard = async (props: Props) => {
                 <HistoryCard/>
             </div>
 
-            <div className="grid gap-4 mt-4 md:grid-cols-1">
-                <QuizMeCard/>
-            </div>
-
+            {userRole === "TEACHER" && (
+                <div className="grid gap-4 mt-4 md:grid-cols-1">
+                    <QuizMeCard/>
+                </div>
+            )}
             <div className="grid gap-4 mt-4 md:grid-cols-2 lg:grid-cols-7">
                 <HotTopicsCard/>
                 <RecentActivityCard/>
