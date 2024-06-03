@@ -29,12 +29,12 @@ const Dashboard = async (props: Props) => {
             </div>
 
             <div className="grid gap-4 mt-4 md:grid-cols-2">
-                <QuizMeCard/>
+                <ViewAvailableQuizzes/>
                 <HistoryCard/>
             </div>
 
             <div className="grid gap-4 mt-4 md:grid-cols-1">
-                <ViewAvailableQuizzes/>
+                <QuizMeCard/>
             </div>
 
             <div className="grid gap-4 mt-4 md:grid-cols-2 lg:grid-cols-7">
