@@ -16,7 +16,7 @@ const QuizMeCard = (props: Props) => {
             }}
         >
             <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-                <CardTitle className="text-2xl font-bold">Quiz me!</CardTitle>
+                <CardTitle className="text-2xl font-bold">Create a quiz!</CardTitle>
                 <BrainCog size={28} strokeWidth={2.5}/>
             </CardHeader>
             <CardContent>

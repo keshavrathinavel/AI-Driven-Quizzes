@@ -30,8 +30,9 @@ const QuizList: React.FC = () => {
         fetchQuizzes();
     }, []);
 
-    const handleTakeQuiz = (quizId: string) => {
-        router.push(`/play/mcq/${quizId}`);
+    const handleTakeQuiz = (quizId: string, gameType: string) => {
+        const route = gameType === "mcq" ? "mcq" : "open-ended";
+        router.push(`/play/${route}/${quizId}`);
     };
 
     return (
@@ -53,7 +54,7 @@ const QuizList: React.FC = () => {
                         <td className="px-20 py-4 whitespace-nowrap">
                             <button
                                 className="text-indigo-600 hover:text-indigo-900"
-                                onClick={() => handleTakeQuiz(quiz.id)}
+                                onClick={() => handleTakeQuiz(quiz.id, quiz.gameType)}
                             >
                                 Take Quiz
                             </button>
